@@ -114,19 +114,17 @@
 # [1, 3, 5, 7, 9, 11] => [[1], [3, 5], [7, 9, 11]]
 # [1, 3, 5, 7, 9]  => [ [1], [3,5], [7,9]]
 # [1, 3, 5, 7, 9, 11, 13]  => [[1], [3, 5], [7, 9, 11], [13]]
-def l_foo(l: list) -> None:
-    new_list = []
-    items = []
-    index = 1
-    while len(l) != 0:
-        items.append(l[:index])
-        new_list.append(items)
-        items = []
-        index += 1
-    print(new_list)
-
-l_foo([1,3,5,7,9])
-
+# def l_foo(l: list) -> None:
+#     new_list = []
+#     index = 1
+#     while len(l) != 0:
+#         new_list.append(l[:index])
+#         del l[:index]
+#         index += 1
+#     print(new_list)
+#
+# l_foo([1,3,5,7,9,11,13,15,17,19])
+#
 # найти со списка только уникальные числа
 # пример [1,2,3,4,2,5,1] => [ 3, 4, 5 ]
 #
