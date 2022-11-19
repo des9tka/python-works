@@ -75,60 +75,60 @@
 
 # ################################################################################################
 # 1)Дан list:
-list1 = [22, 3,5,2,8,2,-23, 8,23,5]
-#   - знайти мін число
-def minN(list):
-    print(min(list))
-
-#   - видалити усі дублікати
-def set_from_list(list):
-    print(list(set(list1)))
-
-#   - замінити кожне 4-те значення на 'X'
-def swap(list):
-    print(['X' if not (i + 1)%4 else v for i, v in enumerate(list)])
+# list1 = [22, 3,5,2,8,2,-23, 8,23,5]
+# #   - знайти мін число
+# def minN(list):
+#     print(min(list))
 #
-# swap(list1)
-# 2) вивести на екран пустий квадрат з "*" сторона якого вказана як агрумент функції
-def squer(n):
-    for i in range(n):
-        if i == 0 or i == n-1:
-            print("*"*n)
-        else:
-            print("*" + " " * (n-2) + "*")
-
-# 3) вывести табличку множення за допомогою цикла while
-def multi_table() :
-    i = 1
-    while i <= 9:
-        j= 1
-        while j <= 9:
-            res = i*j
-            print(f'{res:4}', end='')
-            j+= 1
-        i+=1
-        print()
-
-# 4) переробити це завдання під меню
-while True:
-    print('1) знайти мін число')
-    print('2) видалити усі дублікати')
-    print('3) замінити кожне 4-те значення на "X"')
-    print('4) вивести на екран пустий квадрат з "*" сторона якого вказана як агрумент функції')
-    print('5) вывести табличку множення за допомогою цикла')
-    print('9) Exit')
-
-    response = int(input('Choose: '))
-    if response == 1:
-        minN(list1)
-    elif response == 2:
-        set_from_list(list1)
-    elif response == 3:
-        swap(list1)
-    elif response == 4:
-        n = int(input('Choose the number: '))
-        squer(n)
-    elif response == 5:
-        multi_table()
-    elif response == 9:
-        break
+# #   - видалити усі дублікати
+# def set_from_list(list):
+#     print(list(set(list1)))
+#
+# #   - замінити кожне 4-те значення на 'X'
+# def swap(list):
+#     print(['X' if not (i + 1)%4 else v for i, v in enumerate(list)])
+# #
+# # swap(list1)
+# # 2) вивести на екран пустий квадрат з "*" сторона якого вказана як агрумент функції
+# def squer(n):
+#     for i in range(n):
+#         if i == 0 or i == n-1:
+#             print("*"*n)
+#         else:
+#             print("*" + " " * (n-2) + "*")
+#
+# # 3) вывести табличку множення за допомогою цикла while
+# def multi_table() :
+#     i = 1
+#     while i <= 9:
+#         j= 1
+#         while j <= 9:
+#             res = i*j
+#             print(f'{res:4}', end='')
+#             j+= 1
+#         i+=1
+#         print()
+#
+# # 4) переробити це завдання під меню
+# while True:
+#     print('1) знайти мін число')
+#     print('2) видалити усі дублікати')
+#     print('3) замінити кожне 4-те значення на "X"')
+#     print('4) вивести на екран пустий квадрат з "*" сторона якого вказана як агрумент функції')
+#     print('5) вывести табличку множення за допомогою цикла')
+#     print('9) Exit')
+#
+#     response = int(input('Choose: '))
+#     if response == 1:
+#         minN(list1)
+#     elif response == 2:
+#         set_from_list(list1)
+#     elif response == 3:
+#         swap(list1)
+#     elif response == 4:
+#         n = int(input('Choose the number: '))
+#         squer(n)
+#     elif response == 5:
+#         multi_table()
+#     elif response == 9:
+#         break
