@@ -34,7 +34,7 @@ def init():
             count += 1
 
     except Exception as err:
-        print(err)
+        pass
 
 
 class Purchase:
@@ -64,20 +64,20 @@ class Purchase:
                 for purchase in purchases:
                     split = purchase.split()
                     for i in split:
-                        if i == find_field:
+                        if i == str(find_field):
                             print(f'\n{purchase}')
         except Exception as err:
             print(err)
 
     @classmethod
-    def del_purchase(cls, search_id):
+    def del_purchase_by_ID(cls, search_id):
         try:
-            with open('files/purchases', mode='r+') as purchases:
-                for purchase in purchases:
-                    split = purchase.split()
-                    for i in split:
-                        if f'{search_id})' == i:
-                            print('del')
+            with open('files/purchases', mode='r+') as file, open('files/purchases', mode='w+') as purchases:
+                lines = file.readlines()
+                for purchase in lines:
+                    if purchase.startswith(search_id):
+                        file = ""
+
         except Exception as err:
             print(err)
 
@@ -108,27 +108,31 @@ def Main():
             print('0) Exit\n')
             response = int(input('Choose a number: '))
 
-            if response == 1:
-                Purchase.show_all_purchases()
-            elif response == 2:
-                res1 = input('Input name: ')
-                res2 = input('Input price: ')
-                Purchase.add_purchase(res1, res2)
-            elif response == 3:
-                res = input('Input filter: ')
-                Purchase.find_purchase(res)
-            elif response == 4:
-                Purchase.find_ME_purchase()
-            elif response == 5:
-                res = input('Input ID: ')
-                Purchase.del_purchase(res)
-            elif response == 0:
-                res = input('Y/N?: ')
-                res.upper()
-                if 'Y' in res:
-                    break
-                elif 'N' in res:
-                    continue
+            match response:
+                case 1:
+                    Purchase.show_all_purchases()
+                case 2:
+                    res1 = input('Input name: ')
+                    res2 = int(input('Input price: '))
+                    if res1 and isinstance(res2, int):
+                        Purchase.add_purchase(res1, res2)
+                case 3:
+                    res = input('Input filter: ')
+                    Purchase.find_purchase(res)
+                case 4:
+                    Purchase.find_ME_purchase()
+                case 5:
+                    res = input('Input ID: ')
+                    Purchase.del_purchase_by_ID(res)
+                case 0:
+                    res = input('Y/N?: ')
+                    res.upper()
+                    if 'Y' in res:
+                        break
+                    elif 'N' in res:
+                        continue
+                case _:
+                    print('\nUnknown digit')
 
         except Exception as err:
             print(err)
