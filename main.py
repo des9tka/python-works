@@ -147,52 +147,48 @@
 # в результат має записатись тільки 5 id
 # з даним списком мае вийти ось такий результат:
 # res = [1110, 1120, 1130, 1111, 1122]
-
-data = [
-    [
-        {"id": 1110, "field": {}},
-        {"id": 1111, "field": {}},
-        {"id": 1112, "field": {}},
-        {"id": 1113, "field": {}},
-        {"id": 1114, "field": {}},
-        {"id": 1115, "field": {}},
-    ],
-    [
-        {"id": 1110, "field": {}},
-        {"id": 1120, "field": {}},
-        {"id": 1122, "field": {}},
-        {"id": 1123, "field": {}},
-        {"id": 1124, "field": {}},
-        {"id": 1125, "field": {}},
-
-    ],
-    [
-        {"id": 1130, "field": {}},
-        {"id": 1131, "field": {}},
-        {"id": 1122, "field": {}},
-        {"id": 1132, "field": {}},
-        {"id": 1133, "field": {}},
-
-    ]
-]
-
-res = []
-count = 0
-
-while True:
-    if count < 4:
-        for i in data:
-            for j in i:
-                if j not in res and count < 5:
-                    res.append(j)
-                    print(len(res))
-                    count += 1
-                    break
-    else:
-        break
-
-print(res)
-
-
-
-
+#
+# data = [
+#     [
+#         {"id": 1110, "field": {}},
+#         {"id": 1111, "field": {}},
+#         {"id": 1112, "field": {}},
+#         {"id": 1113, "field": {}},
+#         {"id": 1114, "field": {}},
+#         {"id": 1115, "field": {}},
+#     ],
+#     [
+#         {"id": 1110, "field": {}},
+#         {"id": 1120, "field": {}},
+#         {"id": 1122, "field": {}},
+#         {"id": 1123, "field": {}},
+#         {"id": 1124, "field": {}},
+#         {"id": 1125, "field": {}},
+#
+#     ],
+#     [
+#         {"id": 1130, "field": {}},
+#         {"id": 1131, "field": {}},
+#         {"id": 1122, "field": {}},
+#         {"id": 1132, "field": {}},
+#         {"id": 1133, "field": {}},
+#
+#     ]
+# ]
+#
+# res = []
+# count = 0
+#
+# while True:
+#     if count < 4:
+#         for i in data:
+#             for j in i:
+#                 j_id = j.get('id')
+#                 if j_id not in res and count < 5:
+#                     res.append(j.get('id'))
+#                     count += 1
+#                     break
+#     else:
+#         break
+#
+# print(res)
